@@ -1,0 +1,13 @@
+main{
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+    
+.blue{
+    background-color: blue;
+}
+.white{
+    background-color: white;
+}

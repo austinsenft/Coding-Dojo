@@ -1,0 +1,170 @@
+*{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    color:white; 
+    font-size: 40px;
+}
+
+/* Navigation Bar */
+.nav_left{ 
+    background-color: black;
+    flex: 3;
+    height: 70px;
+    padding-left: 152px;
+    margin-bottom: 30px;
+}
+.nav_right{
+    background-color: black;
+    height: 70px;
+    margin-bottom: 30px;
+    flex: 2;
+}
+.signout{
+    border: 7px solid rgb(20,163,183);
+    background-color: rgb(20,163,183);
+}
+button{
+    margin-top: 25px;
+    margin-left: 75px;
+}
+
+#navlinks a:link{
+    color: white;
+    text-decoration: none;
+}
+
+/* Left side of page */
+.left_page{
+    background-color: white;
+    height: 500px;
+    width: 50%;
+}
+
+/* Right side of page */
+.right_page{
+    background-color: white;
+    height: 560px;
+    width: 650px;
+}
+.pages{
+    display: flex;
+}
+.requests{
+    background-color: grey;
+    padding: 2px;
+    border-radius: 30px;
+}
+.blackdiv{
+    background-color: black;
+    border: 1px solid lightgray;
+    color: white;
+    height: 30px;
+}
+li{
+    text-decoration: none;
+    font: menu;  
+
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+    width:65%; 
+    color: white;
+    list-style: none; 
+    text-decoration: none; 
+} 
+
+
+/* Profile containters */
+.container{
+    background-color: white;
+    border: 3px solid lightgray;
+    height: 320px;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+.container2{
+    background-color: white;
+    border: 3px solid lightgray;
+    height: 200px;
+    width: 500px;
+    margin: 0 auto;
+    margin-right: 10px;
+
+}
+.container3{
+    background-color: white;
+    border: 3px solid lightgray;
+    height: 190px;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+.container4{
+    background-color: white;
+    border: 3px solid lightgray;
+    height: 182px;
+    width: 300px;
+    margin: 0 auto;
+    margin-left: 30px;
+}
+.container_text{
+    margin: 10px;
+    margin-top: 10px;  
+}
+.container4border{
+    border: 1px solid grey;
+    height: 20px;
+}
+.banner{
+    background-color: rgb(20,163,183);
+    height: 100px;
+    margin-bottom: 40px;
+}
+.profile_image{
+    margin-top: 40px;
+    margin-left: 20px;
+    height: 90px;
+}
+.map_marker{
+    height: 20px;
+}
+.gear_icon{
+    height: 20px;
+}
+
+.small_image{
+    height: 20px;
+}
+
+
+
+/* General classes */
+.flex{
+    display: flex;
+}
+.flex_start{
+    align-items: flex-start;
+}
+.jc_center{
+    justify-content: center;
+}
+.space_between{
+    justify-content: space-between;
+}
+.align_center{
+    align-items: center;
+}
+.grey_text{
+    color: grey;
+    font-style: italic;
+}

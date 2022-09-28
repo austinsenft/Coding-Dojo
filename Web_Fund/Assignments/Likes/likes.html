@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes</title>
+    <link rel="stylesheet" href="likes.css">
+</head>
+
+<body class="whole_page_container">
+    <!-- Navbar -->
+    <div>
+        <div class="nav">
+            <h1>Network</h1>
+        </div>
+    </div>
+
+    <!-- Your Feed -->
+    <div class="your_feed">
+        <h1>Your Feed</h1>
+    </div>
+
+    <!-- Main  -->
+    <main class="flex">
+
+    <!-- Left Page -->
+    <div class="left_page">
+        <div class="avatar">
+            <img src="user-circle.png" alt="user-circle" class="profile_image">
+            <div class="avatar_text">
+                <a href="">Add an avatar</a>
+            <h2>James Doe</h2>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Right Page  -->
+    <div class="right_page">
+
+        <div class="block1">
+            <div class="top flex">
+                <h2>Neil M</h2>
+                <p> <span id="first">9</span> Like(s)</p>
+                <button onclick="first()" class="likes">Like</button>
+            </div>
+            <div class="bottom">
+                <p>I just set up this new discord bot, let me know what you all think. <a href="">link</a></p>
+            </div>
+        </div>
+
+        <div class="block1">
+            <div class="top flex">
+                <h2>Nicole K</h2>
+                <p> <span id="second">12</span> Like(s)</p>
+                <button onclick="second()" class="likes">Like</button>
+            </div>
+            <div class="bottom">
+                <p>Just finished my <a href="">next comic</a>, check it out.</p>
+            </div>
+        </div>
+
+        <div class="block1">
+            <div class="top flex">
+                <h2>Jim R</h2>
+                <p> <span id = "third">9</span>  Like(s)</p>
+                <button onclick="third()" class="likes">Like</button>
+            </div>
+            <div class="bottom">
+                <p>I can't stop listening to the <a href="">new album</a>. Who else is liking it? </p>
+            </div>
+        </div>
+    </div>      
+    </main>
+    <script src="likes.js"></script>
+</body>
+
+</html>

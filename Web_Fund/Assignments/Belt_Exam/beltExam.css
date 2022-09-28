@@ -1,0 +1,147 @@
+* {
+    font-family: Comic Sans MS;
+    /* border: blue 1px dotted;  */
+}
+
+.whole_page_container {
+    margin: 0 auto;
+    width: 1200px;
+    margin-bottom: 20px;
+    background-color: lightgray;
+}
+
+/* Navbar and Top bar*/
+
+.topbar{
+    background-color: white;
+}
+.live_scores{
+    flex: 1;
+    
+}
+.actual_scores{
+    flex: 3;
+    gap: 30px;
+}
+.navbar{
+    background-color: black;
+    color: white;
+    margin-bottom: 30px;
+    height: 80px;
+}
+.DSNN{
+    background-color: red;
+}
+.login{
+    height: 40px;
+    gap: 30px;
+    margin-right: 20px;
+}
+.left_nav{
+    flex: 4;
+}
+.right_nav{
+    flex: 1;
+}
+.sports{
+    text-decoration: none;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 30px;
+}
+.numbergoup{
+    border: white;
+    background-color: white;
+    color: black;
+    font-size: x-large;
+}
+
+/* Main Content  */
+
+.left_page{
+    width: 450px;
+}
+.right_page{
+    
+    margin-left: 20px;
+}
+.topstoriesholder{
+    border: 1px solid black;
+    height: 250px;
+    border-radius: 9%;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.topstories{
+    border-bottom: 3px solid black;
+    margin-left: 10px;
+
+}
+.smallbox{
+    border: 1px solid black;
+    height: 180px;
+    border-radius: 9%;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.signin {
+    background-color: rgb(42, 120, 229);
+    color: white;
+    margin-left: 140px;
+    height: 40px;
+    width: 80px;
+    box-shadow: 2px 5px black;
+    margin-left: 30px;
+}
+.signup{
+    background-color: white;
+    color: black;
+    margin-left: 140px;
+    height: 40px;
+    width: 80px;
+    box-shadow: 2px 5px black;
+}
+.subscribe{
+    background-color: gold;
+    color: black;
+    height: 40px;
+    width: 95px;
+    box-shadow: 2px 5px black;
+}
+.bigimage{
+    margin-left: 50px;
+}
+
+.bigbox{
+    border: 1px solid black;
+    height: 700px;
+    border-radius: 9%;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.bottomofbigbox{
+    margin-top: 10px;
+    border-top: 2px solid black;
+    height: 200px;
+}
+.live{
+    color: red;
+}
+
+/* General */
+.flex{
+    display: flex;
+}
+.space_between{
+    justify-content: space-between;
+}
+.align_items{
+    align-items: center;
+}
+
+.margin{
+    margin-left: 10px;
+} 
+.marginright{
+    margin-right: 120px;
+}

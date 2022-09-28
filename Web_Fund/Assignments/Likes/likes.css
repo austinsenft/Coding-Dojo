@@ -1,0 +1,80 @@
+* {
+    font-family: Comic Sans MS;
+    /* border: blue 1px dotted;  */
+}
+
+.whole_page_container {
+    margin: 0 auto;
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+.left_page {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.right_page {
+    flex: 3;
+    margin-left: 55px;
+}
+
+.block1 {
+    border: 2px solid black;
+    width: 490px;
+    height: 170px;
+    margin-bottom: 10px;
+}
+
+.likes {
+    background-color: gold;
+    color: black;
+    height: 40px;
+    width: 95px;
+    box-shadow: 2px 5px black;
+}
+
+.top {
+    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom {
+    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.nav {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    height: 50px;
+    color: white;
+    background-color: black;
+}
+
+.profile_image {
+    height: 80px;
+    margin-top: 40px;
+    margin-left: 55px;
+}
+
+.avatar {
+    border: 2px solid black;
+    height: 300px;
+    width: 210px;
+}
+
+.avatar_text {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.your_feed {
+    margin-left: 40%;
+}

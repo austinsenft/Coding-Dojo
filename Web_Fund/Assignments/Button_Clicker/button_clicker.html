@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Clicker</title>
+    <link rel="stylesheet" href="button_clicker.css">
+</head>
+
+<body>
+    <div class="whole_page_container">
+        <div class="nav_container flex" onclick="console.log(this)">
+            <div class="left_nav flex">
+                <h1>Dojonary</h1>
+                <!-- this will be a form in future -->
+                <input type="text" placeholder="Search.." class="search">
+            </div>
+            <div class="right_nav">
+                <button onclick="logOut(this)" type="submit" class="login">Login</button>
+            </div>
+        </div>
+        <div class="main_content flex">
+            <div class="col_left">
+                <div class="card flex">
+                    <div class="card_content">
+                        <h1>ninja</h1>
+                        <p><strong> <em> noun </em> </strong> </p>
+                        <p>Plural: <em> ninjas </em></p>
+                        <button class="likes" onclick="alert('ninja was liked')">13 likes</button>
+                    </div>
+                    <div class="card_definition">
+                        <p>A practitioner skilled in the <span><a href="">Japanese</a></span> art of <span><a
+                                    href="">Ninjutsu</a></span></p>
+                    </div>
+                </div>
+                <div class="card flex">
+                    <div class="card_content">
+                        <h1>ninja</h1>
+                        <p><strong> <em> noun </em> </strong> </p>
+                        <p>Plural: <em> ninjas </em></p>
+                        <button class="likes" onclick="alert('ninja was liked')">37 likes</button>
+                    </div>
+                    <div class="card_definition">
+                        <p> A <span> <a href="">programmer</a> </span> who breaks down problems with <span><a
+                                    href="">zen</a></span>-like focus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col_right">
+                <div class="card3">
+                    <div class="card3_content">
+                        <p>Dojonary is </p>
+                        <p>defined by <strong>YOU</strong></p>
+                        <button class="add_definition" onclick="hide(this)"> Add definition </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="button_clicker.js"></script>
+</body>
+
+</html>

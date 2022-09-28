@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belt Exam</title>
+    <link rel="stylesheet" href="beltExam.css">
+</head>
+
+<body class="whole_page_container">
+    <!-- Top  -->
+    <div>
+        <div class="topbar flex">
+            <div class="live_scores">
+                <h1>Live Scores</h1>
+            </div>
+            <div class="actual_scores flex">
+                <div>
+                    <p>SJC Ninjas - 314</p>
+                    <p>NJ Pirates - 159</p>
+                </div>
+                <div>
+                    <p>CHI Samurai - 0</p>
+                    <p>TUL Wizards - 0</p>
+                </div>
+                <div>
+                    <p>BOS Hackers - 13</p>
+                    <p>TYO Youkai - 37</p>
+                </div>
+                <div>
+                    <p>BOI Knights - 5 </p>
+                    <p>SEA Sea Lions - 11</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar  -->
+        <div class="navbar flex">
+
+            <div class="left_nav flex">
+                <div class="DSNN">
+                    <h1>DSNN</h1>
+                </div>
+
+                <ul class="flex sports">
+                    <li>Football</li>
+                    <li>Basketball</li>
+                    <li>Soccer</li>
+                    <li>More...</li>
+                </ul>
+
+                <div class="right_nav">
+                </div>
+                <div class="login flex">
+                    <img src="assets/search-light.png" alt="search-light">
+                    <img src="assets/hamburger-light.png" alt="hamburger-light">
+                    <img src="assets/user-circle-light.png" alt="user-circle-light">
+                </div>
+            </div>
+        </div>
+
+        <!-- Main  -->
+        <main class="flex">
+
+            <!-- Main:  Left Page  -->
+            <div class="left_page">
+                <div class="topstoriesholder">
+                    <div>
+                        <h2 class="topstories">Top Stories</h2>
+                    </div>
+                    <div class="margin">
+                        <p>Ninjas up big in 5th Best sports cities Choi joins Hall of Fame Tournament underway Samurai
+                            at Wizards...</p>
+                    </div>
+                </div>
+                <div class="smallbox">
+                    <div class="margin">
+                        <p>Customize your DSNN</p>
+                    </div>
+                    <div class="flex ">
+                        <button class="signin"> Sign In</button>
+                        <button class="signup"> Sign Up</button>
+                    </div>
+                </div>
+                <div class="smallbox">
+                    <div class="margin">
+                        <p><strong> Never </strong> miss a play</p>
+                    </div>
+                    <div class="margin">
+                        <button onclick="hide(this)" class="subscribe">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Page  -->
+            <div class="right_page">
+                <div class="bigbox">
+                    <div class="flex space_between margin">
+                        <div class="live">
+                            <ul>
+                                <li>
+                                    <h1>Live</h1>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="marginright">
+                            <h1>Ninjas leading Pirates</h1>
+                        </div>
+                    </div>
+                    <div class="flex bigimage">
+                        <div>
+                            <img src="assets/sjc-ninjas.png" alt="sjc-ninjas">
+                            <p>San Jose</p>
+                            <h1> <strong> Ninjas</strong> </h1>
+                            <p> (10 W - 3 L)</p>
+                            <button onclick="first()" class="numbergoup"> <span id="first">314</span></button>
+                        </div>
+                        <div>
+                            <h1>VS</h1>
+                            <p>0:13 remaining</p>
+                            <p>5th period</p>
+                        </div>
+                        <div>
+                            <img src="assets/ns-pirates.png" alt="ns-pirates">
+                            <p>Nova Scotia</p>
+                            <h1> <strong> Pirates </strong> </h1>
+                            <p> (12 W - 2 L)</p>
+                            <button onclick="second()" class="numbergoup"> <span id="second">159</span></button>
+                        </div>
+                    </div>
+                    <div class="bottomofbigbox margin">
+                        <p>A conservative match between the two top performing sides in the Central League Division with
+                            a number 1 seed at stake... <a href="">get live updates</a> </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+
+    <script src="beltExam.js"></script>
+</body>
+
+</html>

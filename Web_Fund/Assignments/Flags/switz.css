@@ -1,0 +1,26 @@
+.div1{
+    background-color: red;
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.row1{
+    background-color: white;
+    width: 50px;
+    height: 75px; 
+    margin-left: 60px;
+}
+.row2{
+    background-color: white;
+    width: 175px;
+    height: 50px;
+
+}
+.row3{
+    background-color: white;
+    width: 50px;
+    height: 75px;
+    margin-left: 60px;
+}

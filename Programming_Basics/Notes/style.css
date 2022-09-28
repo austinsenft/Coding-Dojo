@@ -1,0 +1,55 @@
+body { 
+    background-image: url("https://i.pinimg.com/originals/49/28/85/4928858a5eb7f32cb0b86281713d1531.jpg");
+    background-attachment: scroll;
+}
+
+/* This is a tag
+*/
+h1 { 
+    color: blue;
+}
+li { 
+    text-decoration: underline;
+    list-style-type: none;
+} 
+
+p, h1, li, ol, ul, h2, table, a { 
+    background-color: aqua;
+} 
+
+table, th, td, tr { 
+    border:grey 2px solid;
+} 
+
+th { 
+    background-color: teal; 
+    color:white;
+} 
+
+a { 
+    color: black;
+}
+
+/*This is a class 
+*/ 
+.test-class{ 
+background-color: black; 
+color: aliceblue;
+} 
+
+.big-border{ 
+    border: 10px solid magenta;
+}
+
+/* This is an id 
+prefix this with a # 
+id stronger than class and will overide a class
+id > class > tag
+*/ 
+#title { 
+    background-color: rebeccapurple; 
+    color: gold; 
+    font-family: cursive;
+/* margin-bottom: 100px;
+ */
+}

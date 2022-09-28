@@ -1,0 +1,37 @@
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div1{ 
+    margin: 100px;
+    height: 250px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+.div2{
+    margin: 100px;
+    height: 250px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+    
+}
+.div3{
+    margin: 100px;
+    height: 250px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+}
+img{
+    height: 200px;
+    padding: 20px;
+}

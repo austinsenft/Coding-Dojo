@@ -1,0 +1,38 @@
+h1{
+    color:white; 
+    font-size: 20px;
+    font: menu;
+}
+
+.wrapper{ 
+    background-color: dodgerblue;
+    padding: 20px;
+    justify-content: space-between; 
+    align-items: center;
+    display: flex;
+    padding-right: 50px;
+}
+
+img{
+    max-height: 50px;
+}
+
+li{
+    text-decoration: none;
+    font: menu;  
+
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    width:65%; 
+    color: white;
+    list-style: none; 
+    text-decoration: none; 
+} 
+
+a{
+    color: white;
+    text-decoration: none;
+}
