@@ -1,16 +1,27 @@
 
-class BankAccount:
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.accounts = {
+            "checking":BankAccount(int_rate = 0.07, balance = 100),
+            "savings":BankAccount(int_rate =0.03, balance = 5000)}
     
-    all_accounts = []
-# so we can loop through all accounts 
+    def make_deposit(self,amount,account):
+        self.accounts[account].deposit(amount)
+        return self
 
-# HOW DO I CALL THIS AND DID I SET UP CORRECT?
-    # @classmethod
-    # def all_account_details(cls):
-    #     for account in cls.all_accounts:
-    #         print(BankAccount.display_account_info)
-        
-# use a classmethod to print all instances of a Bank Account's info
+    def make_withdraw(self,amount,account): 
+        self.accounts[account].withdraw(amount)
+        return self
+
+    def display_user_balance(self):
+        for account in self.accounts:
+            self.accounts[account].display_account_info()
+        return self 
+    
+
+class BankAccount:
 
     @staticmethod
     def can_withdraw(balance,amount):
@@ -26,9 +37,10 @@ class BankAccount:
 #constructor 
 
     def display_account_info(self): 
-        print(f"Your Balance is {self.balance} and your interest rate is {self.int_rate}")
+        print(f"{user1.name} Your Balance is {self.balance} and your interest rate is {self.int_rate}")
         return self 
 # print to the console: eg. "Balance: $100"
+
 
     def deposit(self, amount):
         self.balance += amount
@@ -53,13 +65,7 @@ class BankAccount:
 # increases the account balance by the current 
 # balance * the interest rate (as long as the balance is positive)
 
-account = BankAccount(.07,100)
-account.deposit(20).deposit(100).deposit(140).withdraw(100).yield_interest().display_account_info()
 
+user1 = User('Austin', 'austinsenft@gmail.com')
+user1.make_deposit(10,'checking').make_withdraw(4,'checking').display_user_balance()
 
-account2 = BankAccount(.09,0) 
-account2.deposit(10).deposit(103).withdraw(10).withdraw(20).withdraw(10).withdraw(14).yield_interest().display_account_info()
-
-# BankAccount.all_account_details() 
-# see why this is not working. how do i get class method called
-# and how would i print all accounts and their info
