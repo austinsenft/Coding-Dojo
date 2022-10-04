@@ -1,12 +1,8 @@
-from tkinter.ttk import Style
-from flask import Flask, render_template, session, redirect, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    return render_template("index.html", phrase="hello", times=5)
-
 @app.route('/hello/<string:name>/<int:num>') 
 def hello(name,num):
     return render_template("index.html", name = name, num = num)

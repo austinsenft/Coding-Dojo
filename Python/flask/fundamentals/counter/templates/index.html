@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Counter</title>
+</head>
+
+<body>
+    <main class="container justify-content-center align-items-center">
+        <div class="justify-content-center align-items-center d-flex">
+            <h1>Counter</h1>
+        </div>
+        <div class="justify-content-center align-items-center d-flex p-3 gap-3">
+            <!-- number button  -->
+            <form action="/count">
+                <button class="btn primary btn-info btn-lg" name="count"> {{num}} </button>
+            </form>
+            <!-- reset button  -->
+            <form action="/destroy" method="post">
+                <button class="btn primary btn-danger btn-lg" name="reset"> Reset</button>
+            </form>
+        </div>
+    </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+Create 3 new dojos
+
+INSERT INTO dojos (id, name, created_at, updated_at) 
+VALUES('1', 'Green Tree', now(), now()); 
+
+INSERT INTO dojos (id, name, created_at, updated_at) 
+VALUES('2', 'Blue Shark', now(), now()); 
+
+INSERT INTO dojos (id, name, created_at, updated_at) 
+VALUES('3', 'Red Phoenix', now(), now()); 
+
+Delete the 3 dojos you just created 
+
+DELETE FROM dojos ; 
+
+Create 3 more dojos
+
+INSERT INTO dojos (id, name, created_at, updated_at) 
+VALUES('1', 'Green Tree', now(), now()); 
+
+INSERT INTO dojos (id, name, created_at, updated_at) 
+VALUES('2', 'Blue Shark', now(), now()); 
+
+INSERT INTO dojos (id, name, created_at, updated_at) 
+VALUES('3', 'Red Phoenix', now(), now()); 
+
+Create 3 ninjas that belong to the first dojo
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('1', 'Alex', 'Middleton', '15', now(), now(), '1'); 
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('2', 'David', 'Enderson', '20', now(), now(), '1'); 
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('3', 'Jane', 'Beginnington', '17', now(), now(), '1'); 
+
+Create 3 ninjas that belong to the second dojo
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('4', 'Fake', 'Name', '16', now(), now(), '2'); 
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('5', 'Ema', 'Nekaf', '19', now(), now(), '2'); 
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('6', 'Made', 'Up', '22', now(), now(), '2'); 
+
+Create 3 ninjas that belong to the third dojo
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('7', 'Out', 'Of', '18', now(), now(), '3'); 
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('8', 'Ideas', 'For', '21', now(), now(), '3'); 
+
+INSERT INTO ninjas (id, first_name, last_name, age, created_at, updated_at, dojo_id) 
+VALUES('9', 'The', 'Names', '14', now(), now(), '3'); 
+
+Retrieve all the ninjas from the first dojo
+
+select * from ninjas 
+where dojo_id = 1
+
+Retrieve all the ninjas from the last dojo
+
+select * from ninjas 
+where dojo_id = 3
+
+Retrieve the last ninja's dojo
+
+select dojo_id from ninjas where id = 9
