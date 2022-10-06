@@ -25,23 +25,61 @@ const expected3 = false;
  * @returns {boolean} Whether the parenthesis are valid.
  */
 function parensValid(str) {
-    var param = []
-    for (var i = 0; i < str.length; i++){
-        if (str[i] == '('){
-            param.push(str[i]);
-        }
-            if(str[i] == ')'){
-                if(param.length == 0){
-                    return false
-                }
-                param.pop();
+    let unmatchedOpens = 0;
+    for (let char of str) {
+        if (char === "(") unmatchedOpens++
+        if (char === ")") unmatchedOpens--
+        if (unmatchedOpens < 0) return false
+    }
+    // if (unmatchedOpens === 0){
+    //     return true
+    // } else {
+    //     return false
+    // }
+    return unmatchedOpens == 0;
+}
+
+
+function parensValidColby(str) {
+    var obj = {};
+    for (var ii = 0; ii < str.length; ii++) {
+        if (str[ii] === "(" || ")") {
+            if (!(str[ii] in obj)) {
+                obj[str[ii]] = 1;
             }
-            if(param.length == 0){
-                return true
+            else {
+                obj[str[ii]] += 1;
+            }
+            if (obj[")"] > obj["("]) {
+                return false;
             }
         }
     }
-    
+    if (obj["("] == obj[")"]) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function bracesValid(str) {
+    const stack = [];
+    const isOpen = { "(": true, "{": true, "[": true }
+    const closesToOpens = { ")": "(", "}": "{", "]": "[" };
+
+    for (let char of str) {
+        if (isOpen[char]) {
+        stack.push(char);
+    } else if (closesToOpens[char]) {
+        if (closesToOpens[char] === stack[stack.length - 1]) {
+        stack.pop();
+        } else {
+        return false;
+        }
+    }
+    }
+    return stack.length === 0;
+}
 
 
 console.log(parensValid(str1)) // expected: true
