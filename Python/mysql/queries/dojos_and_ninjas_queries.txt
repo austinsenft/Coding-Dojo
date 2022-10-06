@@ -1,7 +1,10 @@
 Create 3 new dojos
 
+**DO NOT NEED ID (Auto-Increment) or created_at or updated_at (default time settings) when 
+Creating records!
+
 INSERT INTO dojos (id, name, created_at, updated_at) 
-VALUES('1', 'Green Tree', now(), now()); 
+VALUES('1', 'Green Tree', now(), now());  
 
 INSERT INTO dojos (id, name, created_at, updated_at) 
 VALUES('2', 'Blue Shark', now(), now()); 
@@ -69,4 +72,4 @@ where dojo_id = 3
 
 Retrieve the last ninja's dojo
 
-select dojo_id from ninjas where id = 9
+SELECT dojos.name AS dojo FROM ninjas JOIN dojos ON dojos.id = ninjas.dojo_id WHERE ninjas.id = 9;

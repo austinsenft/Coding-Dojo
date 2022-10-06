@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Users CR</title>
+</head>
+<body>
+    <div class="container p-3">
+    <h1>All Users</h1>
+    </div>
+    <div class="container">
+        <table class="table table-bordered">
+            <tr class="table-dark">
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            {%for user in list_of_users %} 
+                    <td> {{user.id}} </td>
+                    <td>{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}} </td>
+                    <td> <a href="/users/{{user.id}}"> Show</a> | <a href="/users/{{user.id}}/edit">Edit</a> | <a href="/users/{{user.id}}/delete"> Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <form action="/user_form">
+                <button>Add User</button>
+                </form>
+        </div>
+    </div>
+
+</body>
+</html>

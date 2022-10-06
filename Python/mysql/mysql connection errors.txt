@@ -1,0 +1,22 @@
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)") 
+
+Umm not sure, just followed the assignment and got this. 
+
+Changed password from 'root' to '' on line 6 of mysqlconnection.py 
+Still getting the error but now says: 
+
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: NO)") 
+
+Made password change to NO so that's progress. Hmm ... 
+
+Woah woah woah took out name on line 5, now saying 'austinsenft' creepy.
+
+pymysql.err.OperationalError: (1045, "Access denied for user 'austinsenft'@'localhost' (using password: NO)")
+
+Oh, derp, needed to use rootroot in password 
+
+Sweet, see 'These are my friends now'
+
+Got an error trying to throw in random jinja 
+
+jinja2.exceptions.UndefinedError: 'friends' is undefined
