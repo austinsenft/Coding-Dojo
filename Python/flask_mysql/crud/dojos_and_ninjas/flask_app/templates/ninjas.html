@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Ninja Info</title>
+</head>
+    <body class="container mt-4 justify-content-center align-items-center">
+        <div>
+            <h1>New Ninja</h1>
+        </div>
+        <div class="w-50">
+
+            <form action="/ninjas/create" method="POST">
+
+                <div class="form-group mt-4">
+                    <label for="dojo_id">Dojo:  </label>
+                    <!-- make sure to name these correctly based of foreign keys  -->
+                    <select name="dojo_id" id="dojo_id">
+                    {% for dojo in list_of_dojos %}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" id="first_name">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" id="last_name">
+                </div>
+
+                <div class="form-group mt-4">
+                    <label for="age">Age:</label>
+                    <input type="text" name="age" id="age">
+                </div>
+
+                <div>
+                    <div class="form-group mt-4">
+                        <input type="submit" value="Create">
+                    </div>
+                </div>
+        </div>
+    
+        <div class="mt-4">
+            <a href="/">Home</a>
+        </div>
+            </div>
+        </div>
+    </body>
+</html>
