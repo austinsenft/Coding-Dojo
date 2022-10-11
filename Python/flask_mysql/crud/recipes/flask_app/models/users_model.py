@@ -5,15 +5,22 @@ import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 # one for pw validation making sure has upper and number: (?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)
 
+# Make a regular expression for validating an Email
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+
+
+
+
 class User: 
     def __init__(self,data):
         self.id = data['id']
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.email = data['email']
+        self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.password = data['password']
+        
 
 
     @classmethod 
@@ -30,15 +37,36 @@ class User:
         if len(results) > 0: 
             return cls(results[0])
         return False
+    
+    @classmethod 
+    def get_by_id(cls,data): 
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        results = connectToMySQL(DATABASE).query_db(query,data)
+        if len(results) > 0: 
+            return cls(results[0])
+        return False
+
+    # GET THIS EMAIL VALIDATION WORKING 
+    # FIX REPEAT VALUES IN VIEW_RECIPE HTML JINJA
+    # FIX LAYOUT OF NEW_RECIPE AND EDIT_RECIPE (LOWPRIO)
+    @staticmethod 
+    def isValid(email):
+        is_valid = True
+        if re.fullmatch(regex, email):
+            print("Valid email")
+        else:
+            flash("Invalid email")
+            is_valid = False
 
     @staticmethod 
     def validator(potential_user): 
         is_valid = True 
         # logic to check length and prevent empty submissions
-        if len(potential_user['first_name']) < 1: 
+        # first name and last name also require 2 characters
+        if len(potential_user['first_name']) < 2: 
             flash("First name is required","reg")
             is_valid = False
-        if len(potential_user['last_name']) < 1: 
+        if len(potential_user['last_name']) < 2: 
             flash("Last name is required","reg")
             is_valid = False
         if len(potential_user['email']) < 1: 
@@ -71,12 +99,12 @@ class User:
             is_valid = False
 
         # logic to make sure pw has at least 1 uppercase letter and 1 number
-        if potential_user['password'].islower() == True:
-            flash("Passowrd must contain at least 1 uppercase letter and 1 number", "reg")
-            is_valid = False
-        if potential_user['password'].isdigit() == False:
-            flash("Passowrd must contain at least 1 uppercase letter and 1 number", "reg")
-            is_valid = False
+        # if potential_user['password'].islower() == True:
+        #     flash("Passowrd must contain at least 1 uppercase letter and 1 number", "reg")
+        #     is_valid = False
+        # if potential_user['password'].isdigit() == False:
+        #     flash("Passowrd must contain at least 1 uppercase letter and 1 number", "reg")
+        #     is_valid = False
 
         # logic to see if pw matches confirm pass 
         elif not potential_user['password'] == potential_user['confirm_pass']:
