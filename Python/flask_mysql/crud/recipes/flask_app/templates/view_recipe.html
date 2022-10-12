@@ -25,11 +25,14 @@
             
             <div class="m-4">
                 <p>Description: {{this_recipe.description}}</p>
-                <p>Under 30 minutes: {% for one_recipe in all_recipes %}{% if one_recipe.under_30 == 1%} Yes {%else%} No {%endif%}{% endfor %}</p>
+                <p>Under 30 minutes: {% if this_recipe.under_30 == 1%} Yes {%else%} No {%endif%}</p>
                 <p>Instructions: {{this_recipe.instructions}}</p>
                 <p>Date made: {{this_recipe.date_cooked}}</p>
             </div>
             
+        </div>
+        <div class="mt-4">
+            <a class ="btn btn-primary" href="/favorites/{{this_recipe.id}}/{{this_recipe.planner.id}}/create">Add to favories</a>
         </div>
 
     </div>

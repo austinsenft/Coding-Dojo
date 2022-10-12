@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Recipe Dashboard</title>
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="justify-content-between d-flex">
+            <h1>Sasquatch Websighting</h1>
+            <h4>{{logged_user.first_name}} {{logged_user.last_name}}</h4>
+        </div>
+        <div class=" justify-content-between d-flex">
+            <h2>Edit this Sighting</h2>
+            <div>
+                <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+                <a href="/users/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% for message in get_flashed_messages() %}
+                <p class="text-danger"> {{message}} </p>
+                {% endfor %}
+                <form class="form-control align-items-start flex-column d-flex" action="/sighting/{{this_sighting.id}}/update" method="post">
+                    <div>
+                        <div class="mb-3">
+                            <label for="location">Location:</label>
+                            <input class="form-control" type="text" name="location" id="location" value="{{this_sighting.location}}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description">What happened:</label>
+                            <textarea class="form-control" name="description" id="description"  rows="5">{{this_sighting.description}}</textarea>
+                        </div>
+
+                        <button class="btn btn-primary">Report</button>
+                    </div>               
+            </div>
+            <div class="col form-control align-items-start flex-column d-flex">
+                <div class="mb-5">
+                    <label for="seen_date">Date of Sighting: </label>
+                    <input type="date" name="seen_date" id="seen_date" value="{{this_sighting.seen_date}}">
+                </div>
+
+                <div class="mb-5">
+                    
+                    <label for="sasquatch_number"># of Sasquatches:</label>
+                    <input type="number" name="sasquatch_number" id="sasquatch_number" value="{{this_sighting.sasquatch_number}}">
+                </div>
+                
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+</body>
+
+</html>

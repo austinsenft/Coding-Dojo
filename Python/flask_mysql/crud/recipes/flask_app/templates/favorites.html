@@ -12,15 +12,14 @@
 
 <body>
     <div class="container p-3">
-        <h1>Welcome, {{logged_user.first_name}}</h1>
+        <h1>{{logged_user.first_name}} 's Favorites</h1>
         <div class="d-flex justify-content-between">
             <h4>
-                All posted recipes
+                List of favorites
             </h4>
             <div>
-                <a href="/recipes/new" class="btn btn-primary">+Create</a>
+                <a href="/recipes" class="btn btn-primary">Back to dashboard</a>
                 <a href="/users/logout" class="btn btn-danger">Logout</a>
-                <a href="/recipes/{{logged_user.id}}/favorites" class="btn btn-warning">Favorites</a>
             </div>
         </div>
         <div class="mt-4">
@@ -29,21 +28,19 @@
                     <tr>
                         <th>Name</th>
                         <th>Under 30 Mins</th>
-                        <th>Posted By</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for one_recipe in all_recipes %}
+                    {% for fav in logged_user.list_of_faves %}
                     <tr>
-                        <td>{{one_recipe.name}}</td>
-                        <td>{% if one_recipe.under_30 == 1%} Yes {%else%} No {%endif%}</td>
-                        <td>{{one_recipe.planner.first_name}} {{one_recipe.planner.last_name}}</td>
+                        <td>{{fav.name}}</td>
+                        <td>{% if fav.under_30 == 1%} Yes {%else%} No {%endif%}</td>
                         <td> 
-                            <a href="/recipes/{{one_recipe.id}}">View recipe</a>  
-                            {% if logged_user.id == one_recipe.planner.id %}
-                            |<a href="/recipes/{{one_recipe.id}}/edit"> Edit</a> |
-                            <a href="/recipes/{{one_recipe.id}}/delete">Delete</a>
+                            <a href="/recipes/{{fav.id}}">View recipe</a>  
+                            {% if logged_user.id == fav.user_id %}
+                            |<a href="/recipes/{{fav.id}}/edit"> Edit</a> |
+                            <a href="/recipes/{{fav.id}}/delete">Delete</a>
                             {% endif %}
                         </td>
                     </tr>
@@ -51,9 +48,6 @@
                 </tbody>
             </table>
         </div>
-
-
-
     </div>
 
 

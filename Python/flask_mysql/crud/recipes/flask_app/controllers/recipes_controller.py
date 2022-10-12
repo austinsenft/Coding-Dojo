@@ -55,6 +55,7 @@ def update_recipe(id):
     Recipe.update(recipe_data)
     return redirect('/recipes')
 
+
 @app.route('/recipes/<int:id>/delete')
 def delete_recipe(id): 
     Recipe.delete({'id':id})

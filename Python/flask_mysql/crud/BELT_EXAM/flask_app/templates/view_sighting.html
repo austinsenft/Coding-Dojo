@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Recipe Dashboard</title>
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="justify-content-between d-flex">
+            <h1>Sasquatch Websighting</h1>
+            <h4>{{logged_user.first_name}} {{logged_user.last_name}}</h4>
+        </div>
+
+        <div class=" justify-content-between d-flex">
+            <h2>{{this_sighting.location}} on {{this_sighting.seen_date}}</h2>
+            <div>
+                <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+                <a href="/users/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+        <div class="border border-dark mt-4">
+            <div class="d-flex">
+                <div class="m-4">
+                    <p>What happened:</p>
+                    <p>{{this_sighting.description}}</p>
+                </div>
+
+                <div class="m-4">
+                    <p>Skeptics</p>
+                    {% for skep in logged_user.skeptics %}
+                    <p>{{skep.first_name}} {{skep.last_name}}</p>
+                    
+                    {% if logged_user.id == skep.user_id %}
+                    <a href="" class="btn btn-primary"> Believe it!</a>
+                    {% endif %}
+                    
+                    {% endfor %}
+                    <a href="/skeptics/{{this_sighting.planner.id}}/{{this_sighting.id}}/create"class="btn btn-warning">I'm skeptical</a>
+                </div>
+            </div>
+
+            <div class="m-4">
+                <p># of Sasquatches: {{this_sighting.sasquatch_number}}</p>
+            </div>
+            <div class="m-4">
+                <p>Reported by: {{this_sighting.planner.first_name}} {{this_sighting.planner.last_name}}</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+    </div>
+</body>
+
+</html>

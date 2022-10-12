@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Recipe Dashboard</title>
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="justify-content-between d-flex">
+            <h1>Sasquatch Websighting</h1>
+            <h4>{{logged_user.first_name}} {{logged_user.last_name}}</h4>
+        </div>
+        <div class="d-flex justify-content-between">
+            <h4>
+                Reported Sightings
+            </h4>
+            <div>
+                <a href="/new/sighting" class="btn btn-primary">Report a sighting</a>
+                <a href="/users/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+        <div class="mt-4">
+            <table class="table table-light table-striped">
+                <tbody>
+                    {% for one_sighting in all_sightings %}
+                    <tr>
+                        
+                            <td>{{one_sighting.location}} - {{one_sighting.seen_date}}</td>
+                            <td> Reported by: {{one_sighting.planner.first_name}} {{one_sighting.planner.last_name}}</td>
+                        
+                        <td> 
+                            <a href="/show/{{one_sighting.id}}">View </a>  
+                            {% if logged_user.id == one_sighting.planner.id %}
+                            |<a href="/sighting/{{one_sighting.id}}/edit"> Edit</a> |
+                            <a href="/sighting/{{one_sighting.id}}/delete">Delete</a>
+                            
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+
+    </div>
+</body>
+
+</html>

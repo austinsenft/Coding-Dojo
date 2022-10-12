@@ -1,11 +1,9 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import DATABASE 
-from flask_app.models import recipes_model
+from flask_app.models import sightings_model
 from flask import flash 
 import re	
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
-# one for pw validation making sure has upper and number: (?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)
-
 
 class User: 
     def __init__(self,data):
@@ -22,7 +20,7 @@ class User:
     def create(cls,data): 
         query = "INSERT INTO users (first_name, last_name, email, password) VALUES "\
             "(%(first_name)s, %(last_name)s, %(email)s, %(password)s)"
-        return connectToMySQL(DATABASE).query_db(query,data)
+        return connectToMySQL(DATABASE).query_db(query,data) 
 
     @classmethod 
     def get_by_email(cls,data): 
@@ -40,32 +38,32 @@ class User:
             return cls(results[0])
         return False
 
+
     # MANY TO MANY 
     @classmethod 
-    def get_favorites(cls,data): 
-        query = "SELECT * FROM users LEFT JOIN favorites ON users.id = favorites.user_id LEFT JOIN "\
-            "recipes ON recipes.id = favorites.recipe_id WHERE users.id = %(id)s"
+    def get_skeptics(cls,data): 
+        query = "SELECT * FROM users LEFT JOIN skeptics ON users.id = skeptics.user_id LEFT JOIN "\
+            "sightings ON sightings.id = skeptics.sighting_id WHERE users.id = %(id)s"
         results = connectToMySQL(DATABASE).query_db(query,data)
-
         user_instance = cls(results[0])
         many_to_many_data = [] 
         for row in results:
-            recipe_data = {
+            sighting_data = {
                 **row,
-                'id': row['recipes.id'],
-                'created_at': row['recipes.created_at'],
-                'updated_at': row['recipes.updated_at']
+                'id': row['sightings.id'],
+                'created_at': row['sightings.created_at'],
+                'updated_at': row['sightings.updated_at']
             }
-            this_recipe = recipes_model.Recipe(recipe_data)
-            many_to_many_data.append(this_recipe)
-        user_instance.list_of_faves = many_to_many_data
-        print(user_instance.list_of_faves)
+            this_sighting = sightings_model.Sighting(sighting_data)
+            many_to_many_data.append(this_sighting)
+        user_instance.skeptics = many_to_many_data
         return user_instance
 
     @classmethod 
-    def create_favorite(cls,data): 
-        query = "INSERT INTO favorites (user_id , recipe_id) VALUES (%(user_id)s, %(recipe_id)s)"
+    def create_skeptic(cls,data): 
+        query = "INSERT INTO skeptics (user_id, sighting_id ) VALUES (%(user_id)s, %(sighting_id)s)"
         return connectToMySQL(DATABASE).query_db(query, data)
+
 
     @staticmethod 
     def validator(potential_user): 
@@ -80,7 +78,6 @@ class User:
             is_valid = False
 
         # logic to check if only using letters and at least 1 character
-        # docs.python.org/3.6/library/stdtypes.html#str.isalpha 
         if potential_user['first_name'].isalpha() == False:
             flash("First name must contain letters only", "reg")
         if potential_user['last_name'].isalpha() == False:
@@ -106,14 +103,6 @@ class User:
         if len(potential_user['password']) < 8: 
             flash("Password must be at least 8 characters","reg")
             is_valid = False
-
-        # logic to make sure pw has at least 1 uppercase letter and 1 number
-        # if potential_user['password'].islower() == True:
-        #     flash("Passowrd must contain at least 1 uppercase letter and 1 number", "reg")
-        #     is_valid = False
-        # if potential_user['password'].isdigit() == False:
-        #     flash("Passowrd must contain at least 1 uppercase letter and 1 number", "reg")
-        #     is_valid = False
 
         # logic to see if pw matches confirm pass 
         elif not potential_user['password'] == potential_user['confirm_pass']:
