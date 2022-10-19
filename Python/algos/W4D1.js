@@ -23,37 +23,13 @@ const expected3 = 0;
  * @returns {number}
  */
 
-// function recursiveSigma(num) {
-//     if (i >= num.length){
-//         return num
-//     }
-//     let thisNum = num[i]
-
-//     //Your code here
-//     //Santize value?
-//     //Base case?
-//     //Recursive call?
-
-// }
-
 function recursiveSigma(num){
     num = Math.floor(num)
-    if (num < 1)
-        return 0
-    if (num <= 1)
-        return num;
+    if (num <= 0) {
+        return 0;
+    }   
     return num + recursiveSigma(num - 1);
 }
-
-// if (i >= nums.length){
-//     return 0
-//     }
-//    
-//     let thisNum = nums[i]
-//     i++
-//    
-//     return thisNum + sumArr(nums,i)
-// }
 
 console.log(recursiveSigma(num1)); // 15
 console.log(recursiveSigma(num2)); // 3
