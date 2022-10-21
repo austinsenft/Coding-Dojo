@@ -1,6 +1,8 @@
 from flask_app import app
 from flask_app.controllers import users_controller
-# from flask_app.controllers import reviews_controller
+from flask_app.controllers import parks_controller
+from flask_app.controllers import reviews_controller 
+
 
 
 

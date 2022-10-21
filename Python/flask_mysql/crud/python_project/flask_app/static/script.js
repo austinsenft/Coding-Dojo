@@ -13,12 +13,15 @@ function getData(event){
         .then(npsData => {
             console.log(npsData)
             dataResultDiv.innerHTML = `
-            <h3> ${npsData.total} </h3> 
+            <h3>There are ${npsData.total} National Parks in this State</h3> 
             `
+            for(let elem of npsData.data){
+                console.log(elem)
+                dataResultDiv.innerHTML += `<li><a href='/parks/${elem.id}'class="link-primary">${elem.fullName}</a></li>`
+            }
         })
         .catch(err => console.log(err))
 }
 
 
 
-{/* <h3> ${npsData.data[0].addresses[0].city} </h3> */}

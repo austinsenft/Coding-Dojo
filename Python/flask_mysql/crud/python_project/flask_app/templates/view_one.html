@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>National Park View One</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container mt-4 d-flex justify-content-end">
+            <div class="p-3">
+                
+                <a class="btn btn-primary" href="/reviews/{{id}}"> Reviews</a>
+                
+                <a class="btn btn-warning" href="/">Home</a>
+            </div>
+        </div>
+        {% for park in parkinfo.data %}
+        <h1>{{park.fullName}}</h1>
+
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col">
+                    <img src="{{park.images[0].url}}" alt="picture" height="150" width="200">
+                </div>
+            </div>
+        </div>
+
+        <div class="container border border-success mt-4">
+            <div class="row">
+                <div class="col">
+                    <p> <b>Addresses</b></p>
+                    <p> <b> Physical:</b> {{park.addresses[0].line2}} {{park.addresses[0].line1}} {{park.addresses[0].city}}, {{park.addresses[0].stateCode}} {{park.addresses[0].postalCode}}</p>
+                    <p> <b> Mailing:</b> {{park.addresses[1].line2}} {{park.addresses[1].line1}} {{park.addresses[1].city}}, {{park.addresses[1].stateCode}} {{park.addresses[1].postalCode}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container border border-success mt-4">
+            <div class="row">
+                <div class="col">
+                    <p> <b>Directions</b></p>
+                    <p>{{park.directionsInfo}}</p>
+                    <a href="{{park.directionsUrl}}">Link to directions</a> 
+                </div>
+            </div>
+        </div>
+
+        <div class="container border border-success mt-4">
+            <div class="row">
+                <div class="col">
+                    <p> <b> <p>Entrance Fees</p></b></p>
+                    <p> <b> <p>{{park.entranceFees[0].title}}</p></b></p>
+                    <p>{{park.entranceFees[0].description}}</p>
+                    <p>${{park.entranceFees[0].cost}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container border border-success mt-4">
+            <div class="row">
+                <div class="col">
+                    <p> <b>Operating Hours</b></p>
+                    <p>{{park.operatingHours[0].description}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container border border-success mt-4">
+            <div class="row">
+                <div class="col">
+                    <p> <b>Weather Info</b></p>
+                    <p>{{park.weatherInfo}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container border border-success mt-4">
+            <div class="row">
+                <div class="col">
+                    <p> <b>Activities</b></p>
+                    {% for p in park.activities %}
+                    <li>{{p.name}}</li>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+            {% endfor %}
+            <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

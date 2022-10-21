@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Registration and Login</title>
+    <style>
+        body {background-image: url('https://media.cntraveler.com/photos/5ea78b2b149c56000808d31c/master/w_2580%2Cc_limit/Kobuk-Valley-National-Park-PX2C3J.jpg');}
+        </style>
 </head>
 
 <body>
@@ -18,7 +21,7 @@
                 {% for message in get_flashed_messages(category_filter=['reg']) %}
                 <p class="text-danger"> {{message}} </p>
                 {% endfor %}
-                <form class="form-control align-items-end flex-column d-flex" action="/users/register" method="post">
+                <form class="bg-transparent form-control align-items-end flex-column d-flex" action="/users/register" method="post">
                     <div class="mb-3">
                         <label for="first_name">First Name</label>
                         <input type="text" name="first_name" id="first_name">
@@ -47,7 +50,7 @@
                 {% for message in get_flashed_messages(category_filter=['log']) %}
                 <p class="text-danger"> {{message}} </p>
                 {% endfor %}
-                <form class="form-control align-items-end flex-column d-flex" action="/users/login" method="post">
+                <form class="bg-transparent form-control align-items-end flex-column d-flex" action="/users/login" method="post">
                     <div class="mb-3">
                         <label for="email">Email</label>
                         <input type="text" name="email" id="email">

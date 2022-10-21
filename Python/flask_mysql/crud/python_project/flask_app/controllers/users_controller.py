@@ -2,6 +2,7 @@ from crypt import methods
 from flask_app import app 
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.users_model import User
+# from flask_app.models.reviews_model import Reviews
 from flask_bcrypt import Bcrypt 
 bcrypt = Bcrypt(app)
 
@@ -64,15 +65,6 @@ def log_out_user():
     return redirect('/') 
 
 
-@app.route('/skeptics/<int:user_id>/<int:sighting_id>/create')
-def skeptics_create(sighting_id, user_id): 
-    data = {
-        'user_id' : user_id,
-        'sighting_id' : sighting_id
-    }
-    if 'user_id' not in session: 
-        return redirect('/')
-    User.create_skeptic(data)
-    return redirect('/dashboard')
+
 
 
