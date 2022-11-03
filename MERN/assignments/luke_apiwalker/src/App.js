@@ -1,30 +1,27 @@
 import './App.css';
-import ErrorPage from './components/ErrorPage';
-
-import { Routes, Route, Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+import People from './components/People';
+import Planets from './components/Planets';
+import Form from './components/Form';
+import Error from './components/Error';
 
 function App() {
   return (
     <div className="App">
-      <h1>Star Wars Routing</h1>
-      {/* <a href="/">a tag home</a> |  */}
-      <Link to={"/"}>Link home</Link> |
-      <Link to={"/other"}>other</Link> |
-      <Link to={"/form"}>FORM</Link>
+      {/* {JSON.stringify(responseData)} */}
+      <h1>SWAPI Luke APIWalker</h1>
       <hr />
 
-      
-
+      <Form />
       <fieldset>
-        <legend>Routes component</legend>
-
-
         <Routes>
 
+          <Route path='/people/:id' element={<People />} />
 
+          <Route path='/planets/:id' element={<Planets />} />
 
-          {/* wildcard */}
-          <Route path="*" element={<ErrorPage />} />
+          <Route path='/:error' element={<Error />} />
 
         </Routes>
       </fieldset>
