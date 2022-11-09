@@ -5,26 +5,26 @@ const app = express();
 const port = 8000;
 
 
-
-app.listen(port, () => console.log(`Listening on port: ${port}`));
-
 class User {
     constructor() {
         this.id = faker.datatype.uuid(),
+        this.avatar = faker.image.avatar(),
         this.firstName = faker.name.firstName();
         this.lastName = faker.name.lastName();
-        this.phoneNumber = faker.phone.phoneNumber();
+        this.phoneNumber = faker.phone.number();
         this.email = faker.internet.email();
         this.password = faker.internet.password();
     }
 }
-
 console.log(new User);
+
 
 class Company {
     constructor() {
         this.id = faker.datatype.uuid();
-        this.name = faker.company.companyName();
+        this.name = faker.company.name();
+        this.catchphrase = faker.company.catchPhrase();
+        // side note: this catchphrase generator is amazing
         this.address = {
             street: faker.address.streetAddress(),
             city: faker.address.city(),
@@ -34,8 +34,8 @@ class Company {
         }
     }
 }
-
 console.log(new Company)
+
 
 app.get("/", (req, res) => {
     res.json({ message: "Faker API Stuff" });
@@ -59,3 +59,5 @@ app.get("/api/user/company", (req, res) => {
         company: company,
     });
 });
+
+app.listen(port, () => console.log(`Listening on port: ${port}`));
