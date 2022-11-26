@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import SingleCard from './components/SingleCard'
 
 
-
 const cardImages = [
   { "src": "/img/Ludwig.png", matched: false },
   { "src": "/img/ClericBeast.png", matched: false },
@@ -65,7 +64,7 @@ function App() {
 
   // console.log(cards)
 
-  // reset choices & increase turn 
+  // reset choices and increase turn 
   const resetTurn = () => {
     setChoiceOne(null)
     setChoiceTwo(null)
@@ -74,7 +73,7 @@ function App() {
   }
 
 
-  //start game automatically
+  // start game automatically
   useEffect(() => {
     shuffleCards()
   }, [])
@@ -82,7 +81,7 @@ function App() {
   return (
     
     <div className="App" s>
-      <h1>Bloodborne Memory</h1>
+      <h1>Bloodborne Memory Game</h1>
 
       <button onClick={shuffleCards}>New Game</button>
 
