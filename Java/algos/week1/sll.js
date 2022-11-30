@@ -1,128 +1,111 @@
-// MON
-
-/* 
-Intro to Singly Linked Lists
- - OOP
- - Array VS SLL
-*/
 class SLNode {
-    constructor(value) {
-        this.value = value
-        this.next = null
+    constructor(value){
+        this.value = value;
+        this.next = null;
     }
 }
-
-
 
 class SLL {
-    constructor() {
+    constructor(){
         this.head = null;
     }
-    //  MONDAY -------------------------------------------------------------------//
-    /**
-     * Prints all the nodes in the list to the console.
-     * of this list.
-     * - Time: (?).
-     * - Space: (?).
-     * @returns {SinglyLinkedList} This list.
-     */
+
+    // validate if empty
     isEmpty(){
-        if(this.head === null){
-            return true
-        }
-        return false
+        return this.head === null;
     }
-    printValues() {
+
+    // print all the values of the SLL in the console
+    printValues(){
         // SLL IS EMPTY
-        if(this.isEmpty()){
-            console.log("SLL IS EMPTY")
+        if (this.isEmpty()){
+            console.log('SLL is empty.')
+            return
         }
         // SLL IS NOT EMPTY
         let runner = this.head
-        while(runner != null){
+        while (runner !== null){
             console.log(runner.value)
-            runner = runner.next
+            runner =  runner.next
         }
     }
 
-
-
-    //  TUESDAY -------------------------------------------------------------------//
-    /**
-     * Creates a new node with the given data and inserts it at the back of
-     * this list.
-     * - Time: (?).
-     * - Space: (?).
-     * @param {any} data The data to be added to the new node.
-     * @returns {SinglyLinkedList} This list.
-     */
-    insertAtBack(data) {
+    // adds new node to back of SLL
+    insertFromBack(data){
+        let newNode = new SLNode(data);
         // SLL IS EMPTY
-        // CREATE A NEW NODE WITH THE GIVEN DATA
-        let NewNode = new SLNode(data)
-        if(this.isEmpty()){
-            console.log("SLL IS EMPTY")
-            // POINT THE HEAD TO THE NEW NODE
-            this.head = NewNode
-            // RETURN
-            return 
+        if (this.isEmpty()){
+            this.head = newNode;
+            return this
         }
         // SLL IS NOT EMPTY
-        // CREATE A RUNNER AT THE HEAD
-        let runner = this.head
-        // RUN THE RUNNER UNTIL IT GETS TO THE LAST NODE
-        while(runner.next != null){
-            // console.log(runner.value)
+        let runner = this.head;
+        while (runner.next !== null){
             runner = runner.next
         }
-        // POINT THE RUNNER'S NEXT TO THE NEW NODE
-        runner.next = NewNode
-        return
+        runner.next = newNode;
+        return this
     }
 
-    /**
-     * Adds each item of the given array to the back of this list.
-     * - Time: (?).
-     * - Space: (?).
-     * @param {Array<any>} vals The data for each new node.
-     * @returns {SinglyLinkedList} This list.
-     */
-    seedFromArr(vals) {
-        for (let i = 0; i < vals.length; i++){
-            this.insertAtBack(vals[i])
+    // creates SLL from an array of values
+    seedFromArray(vals){
+        for (const data of vals){
+            this.insertFromBack(data)
         }
-        return
+        return this
+    }
+
+    // adds node to from of SLL
+    insertFromFront(data){
+        let newNode = new SLNode(data);
+        // SLL IS EMPTY
+        if (this.isEmpty()){
+            this.head = newNode;
+            return this
+        }
+        // SLL IS NOT EMPTY
+        newNode.next = this.head;
+        this.head = newNode;
+        return this
+    }
+
+    // remove node from from of SLL
+    removeAtFront(){
+        // SLL IS EMPTY
+        if (this.isEmpty()){
+            return this
+        }
+        // SLL IS NOT EMPTY
+        this.head = this.head.next;
+        return this
+    }
+
+    // average values of SLL?
+    average(){
+        let total = 0;
+        let length = 0;
+        let runner = this.head;
+        while (runner !== null){
+            length++;
+            total += runner.value;
+            runner = runner.next;
+        }
+        console.log(`Average is: ${total/length}`)
+        return this
     }
 }
 
-//==========================//
-//         TESTING          //
-//==========================//
+// TESTING
+let sll1 = new SLL();
+sll1.insertFromBack(1)
+sll1.insertFromBack(2)
+sll1.insertFromBack(3)
+sll1.insertFromBack(4)
 
+sll1.insertFromFront(0)
+sll1.removeAtFront()
+sll1.average()
 
-var sll = new SLL();
-sll.insertAtBack(1)
-sll.insertAtBack(2)
-sll.insertAtBack(3)
-sll.insertAtBack(4)
-sll.insertAtBack(5)
+sll1.printValues()
 
-sll.seedFromArr([6,7,8,9,10])
-
-sll.printValues()
-// sll.insertAtFront(10)
-// sll.removeAtFront()
-// sll.printValues()
-
-
-let slnode = new SLNode("a")
-// let runner = slnode
-// slnode.value = "b"
-// console.log(runner)
-
-// let newSLL = new SLL()
-
-let slNode1 = new SLNode('a')
-let slNode2 = new SLNode('b')
-// newSLL.head = slNode1
-// slNode1.next = slNode2
+console.log('~~~~~~~~~')
