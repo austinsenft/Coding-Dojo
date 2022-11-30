@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/Users/austinsenft/Desktop/Coding_Dojo/Java/STS/.metadata/.plugins/org.eclipse.jdt.core
+66884335.index
+2545294107.index
+1865797976.index

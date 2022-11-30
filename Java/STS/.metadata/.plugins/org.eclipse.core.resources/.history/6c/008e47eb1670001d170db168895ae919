@@ -1,0 +1,22 @@
+
+public class BankAccount {
+	// MEMBER VARIABLES, ATTRIBUTES
+    private double checkingBalance;
+    private double savingsBalance;
+
+    // CONSTRUCTOR METHODS
+    // EMPTY CONSTRUCTOR
+    public BankAccount(){
+        this.checkingBalance = 0;
+        this.savingsBalance = 0;
+    }
+
+    // FULL CONSTRUCTOR
+    public BankAccount(double checkingBalance, double savingsBalance){
+        System.out.println("CUSTOM CAR BEING MADE");
+        this.engine = engine;
+        this.wheels = wheels;
+        this.automatic = automatic;
+        this.odometer = odometer;
+    }
+}

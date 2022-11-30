@@ -1,0 +1,6 @@
+package com.austinsenft.zookeeper;
+
+public class Gorilla extends Mammal {
+	
+
+}

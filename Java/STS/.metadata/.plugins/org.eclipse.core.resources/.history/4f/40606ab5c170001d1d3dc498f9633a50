@@ -1,0 +1,16 @@
+package com.austinsenft.zookeeper;
+
+public class Mammal {
+	private double energyLevel;
+	
+
+	// Empty Constructor 
+	public Mammal() {
+		this.energyLevel = 100; 
+	}
+	
+	// Full Constructor 
+	public Mammal(double energyLevel) {
+		this.energyLevel = energyLevel;
+	}
+}

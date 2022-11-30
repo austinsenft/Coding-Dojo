@@ -1,0 +1,60 @@
+
+public class BankAccount {
+	// Member Variables, Attributes
+    private double checkingBalance;
+    private double savingsBalance;
+    
+    // Static variables
+    private static int numberOfAccounts = 0;
+    private static int totalMoneys = 0;
+    
+}
+
+    // Constructor Methods
+    // Empty Constructor
+    public BankAccount(){
+        this.checkingBalance = 0;
+        this.savingsBalance = 0;
+        numberOfAccounts++;
+    }
+
+    // Full Constructor
+    public BankAccount(double checkingBalance, double savingsBalance){
+        this.checkingBalance = checkingBalance;
+        this.savingsBalance = savingsBalance; 
+        numberOfAccounts++;
+    }
+    
+    
+    // Getters 
+    public double getCheckingBalance(){
+        return this.checkingBalance;
+    }
+    
+    public double getSavingsBalance(){
+        return this.savingsBalance;
+    }
+    
+    
+    // Setters
+    
+    
+    // Other Methods
+    
+    // Static Methods
+    public static int accountCount() {
+    	//logic to add all accounts created so far together here
+        return numberOfAccounts;
+    }
+    
+    public static int totalMoneys() {
+    	//logic to add all money from all accounts together here
+    	return totalMoneys;
+    
+    
+    // deposit 
+    public void deposit(double amount){
+        this.checkingBalance += amount ;
+    }
+}
+
