@@ -1,0 +1,27 @@
+package com.austinsenft.zookeeper;
+
+public class GiantBat extends Mammal {
+	// Member Variables
+//	protected double energyLevel;
+	
+	// Constructors 
+	// Empty Constructor 
+	public GiantBat() {
+		super(); 
+		this.energyLevel = 300; 
+	}
+	
+	// Full Constructor 
+	public GiantBat(double energyLevel) {
+		this.energyLevel = energyLevel;
+	}
+	
+	// Getters, Setters, Other Methods 
+	
+	// Attack Towns 
+	public void attackTowns() {
+		System.out.println("Hahahahha burn lowly humans!"); 
+		
+	}
+
+}

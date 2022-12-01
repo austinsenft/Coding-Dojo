@@ -1,0 +1,28 @@
+package com.austinsenft.zookeeper;
+
+public class Gorilla extends Mammal {
+	// Member Variables
+	
+	
+	// CONSTRUCTORS
+	public Gorilla() {
+		super();
+		this.airResistance = 100;
+	}
+	
+	public Gorilla(double energyLevel) {
+		super(name, age, 40000);
+		this.airResistance = airResistance;
+	}
+	
+	
+	
+	
+	
+	
+	public void throwThings() {
+		System.out.println("Eat this!"); 
+		super.setEnergyLevel(energyLevel -= 5);
+	}
+
+}

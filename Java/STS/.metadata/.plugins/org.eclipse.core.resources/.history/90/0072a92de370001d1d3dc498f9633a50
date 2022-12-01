@@ -1,0 +1,21 @@
+package com.austinsenft.zookeeper;
+
+public class GiantBat extends Mammal {
+	// Member Variables
+	
+	// Constructors 
+	// Empty Constructor 
+	public GiantBat() {
+		super(); 
+		this.energyLevel = 300; 
+	}
+	
+	// Full Constructor 
+	public GiantBat(double energyLevel) {
+		this.energyLevel = energyLevel;
+	}
+	
+	// Getters, Setters, Other Methods 
+	
+
+}

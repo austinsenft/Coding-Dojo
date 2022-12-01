@@ -1,0 +1,10 @@
+package com.austinsenft.zookeeper;
+
+public class GiantBat extends Mammal {
+	// Member Variables
+	
+	//Constructors 
+	//Empty Constructor 
+	
+
+}
